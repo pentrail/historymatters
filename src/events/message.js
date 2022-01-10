@@ -8,7 +8,7 @@ module.exports = {
     const command = args.shift().toLowerCase();
     // Evaluate Command (Bot Owner Only)
 
-    const cleaned = async (text) => {
+    const clean = async (text) => {
 
       if (text && text.constructor.name == "Promise")
         text = await text;
