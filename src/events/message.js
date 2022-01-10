@@ -1,13 +1,14 @@
+const templates = require("../assets/templates/embedTemplates.js");
+
 module.exports = {
   name: 'messageCreate',
   async execute(message) {
 
     const args = message.content.slice(1).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
-
     // Evaluate Command (Bot Owner Only)
 
-    const clean = async (text) => {
+    const cleaned = async (text) => {
 
       if (text && text.constructor.name == "Promise")
         text = await text;
@@ -28,7 +29,10 @@ module.exports = {
 
     if (message.content.startsWith(`/eval`)) {
 
-      if (message.author.id !== '792874163114475572') return;
+      if (message.author.id !== '792874163114475572') {
+        message.channel.send({embeds: [templates.permissionDenied("You must be the bot owner in order to use this command")]});
+        return;
+      } 
       try {
         const evaled = eval(args.join(" "));
         const cleaned = await clean(evaled);
