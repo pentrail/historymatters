@@ -1,4 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
+const embedTemplates = require("../assets/templates/embedTemplates.js");
 
 module.exports = {
 
@@ -11,7 +12,7 @@ module.exports = {
     const maxNumber = interaction.options.getInteger('max');
     // Generates random number from 1 to the number specified
     let randomNumber = Math.floor(Math.random() * maxNumber) + 1;
-    return interaction.reply(String(randomNumber));
+    return interaction.reply({embeds: [embedTemplates.response(String(randomNumber))]});
   },
 
 }
