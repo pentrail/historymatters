@@ -1,0 +1,23 @@
+{
+  "name": "historymatters",
+  "version": "1.0.0",
+  "engines": {
+    "node": "16.x"
+  },
+  "description": "A bot for the History Matters Discord server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "historymatters"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/rest": "^0.2.0-canary.0",
+    "discord-api-types": "^0.26.1",
+    "discord.js": "^13.5.1"
+  }
+}
