@@ -2,6 +2,7 @@ const fs = require("fs")
 const { Client, Intents, Collection } = require('discord.js');
 const client = new Client({ intents: [ Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES ]});
 const { clientId, guildId } = require('./config.json');
+const { token } = require('./token.json');
 
 client.commands = new Collection();
 const commandFiles = fs.readdirSync('./src/commands').filter(file => file.endsWith('.js'));
@@ -23,4 +24,4 @@ for (const file of eventFiles) {
   }
 }
 
-client.login(process.env.TOKEN);
+client.login(token);
