@@ -11,7 +11,7 @@ function permissionDeniedEmbed(description) {
 
 function successEmbed(description) {
     const success = new MessageEmbed()
-        .setColor('')
+        .setColor('#009933')
         .setTitle("Success!")
         .setDescription(description)
         .setTimestamp();
@@ -20,7 +20,7 @@ function successEmbed(description) {
 
 function responseEmbed(title) {
     const response = new MessageEmbed()
-        .setColor('')
+        .setColor('0099ff')
         .setTitle(title)
         .setTimestamp();
     return response;

@@ -1,4 +1,4 @@
-const templates = require("../assets/templates/embedTemplates.js");
+const embedTemplates = require("../assets/templates/embedTemplates.js");
 
 module.exports = {
   name: 'messageCreate',
@@ -30,7 +30,7 @@ module.exports = {
     if (message.content.startsWith(`/eval`)) {
 
       if (message.author.id !== '792874163114475572') {
-        message.channel.send({embeds: [templates.permissionDenied("You must be the bot owner in order to use this command")]});
+        message.channel.send({embeds: [embedTemplates.permissionDenied("You must be the bot owner in order to use this command")]});
         return;
       } 
       try {
